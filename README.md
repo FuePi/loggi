@@ -29,14 +29,15 @@ How to build?
 How to use?
 -----------
 Loggi is a command line tool to analyse practically any log file. The idea is to write a json based template configuration file to let loggi know how exactly you need the log file to be parsed:
-* Create template file according to your log format and requirements. Check example [template.json](template.json) and see Wiki documentation on [Template File Format](https://github.com/CptSpaetzle/loggi/wiki/Template-File-Format)
+* Create template file according to your log format and requirements. Check example [templates](https://github.com/CptSpaetzle/loggi/tree/master/templates) and see Wiki documentation on [Template File Format](https://github.com/CptSpaetzle/loggi/wiki/Template-File-Format)
 * Run loggi, providing source log file:
 
   ``` bash
-  java -jar loggi.jar -s ${source.log.file}
+  java -jar loggi.jar -t ${template.json.file} -s ${source.log.file}
   ```
 * Once you see a prompt, you can access results through browser (default *http://localhost:8082*):
 <pre>
+JDBC URL: jdbc:h2:mem:loggi
 User: user
 Password: password
 </pre>

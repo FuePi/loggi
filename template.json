@@ -1,11 +1,16 @@
 {
-    "dbMode": "memory",
+    "writer": {
+        "writerClass":"de.loggi.service.writers.H2WriteServiceImpl",
+        "attributes":[
+            {"name":"mode","value":"memory"}
+        ]
+    },
     "recordSeparator":"\\d{2}\\.\\d{2}\\.\\d{4}",
     "columns":[
         {
             "name":"date",
             "defaultValue":"undefined",
-            "processorName":"de.dmc.loggi.processors.impl.RegexMatchProcessor",
+            "processorName":"de.loggi.processors.impl.RegexMatchProcessor",
             "attributes":[
                 {"name":"regex", "value":"\\d{2}\\.\\d{2}\\.\\d{4}"}
             ]
@@ -13,7 +18,7 @@
         {
             "name":"level",
             "defaultValue":"undefined",
-            "processorName":"de.dmc.loggi.processors.impl.RegexMatchProcessor",
+            "processorName":"de.loggi.processors.impl.RegexMatchProcessor",
             "attributes":[
                 {"name":"regex", "value":"(ERROR|WARN|INFO)"}
             ]
